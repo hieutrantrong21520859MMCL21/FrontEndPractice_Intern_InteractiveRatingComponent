@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(216, 12%, 8%);
+}
+
+.rating-box, .pop-up {
+    font-family: 'Overpass', sans-serif;
+    background-color: hsl(213, 19%, 18%);
+
+    width: 90%;
+    height: fit-content;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.rating-box img {
+    background-color: hsl(213, 20%, 22%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 13px;
+    
+}
+
+.rating-box h2, .pop-up h2 {
+    color: hsl(0, 0%, 100%);
+}
+
+.rating-box p, .pop-up p.contribution {
+    color: hsl(217, 12%, 63%);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.rating-box ._button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.rating-box ._button button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 15px;
+    background-color: hsl(213, 20%, 22%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rating-box ._button button:hover {
+    background-color: hsl(25, 97%, 53%);
+}
+
+.rating-box ._button button:focus {
+    background-color: hsl(217, 12%, 63%);
+}
+
+.rating-box button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: hsl(25, 97%, 53%);
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.rating-box button:hover {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pop-up img {
+    margin-top: 20px;
+}
+
+.pop-up p.result {
+    background-color: hsl(213, 20%, 22%);
+    color: hsl(25, 97%, 53%);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px 10px 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media Query */
+@media screen and (min-width: 375px) {
+
+    .rating-box, .pop-up {
+        width: 337.5px;
+    }
+}
