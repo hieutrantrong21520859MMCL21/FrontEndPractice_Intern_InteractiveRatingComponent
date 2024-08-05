@@ -14,7 +14,7 @@ submit_btn.addEventListener('click', function() {
 // Click on pop - up to close it
 pop_up.addEventListener('click', function() {
 
-    if (!pop_up.getAttribute('class').includes('hidden'))
+    if (!pop_up.classList.contains('hidden'))
     {
         pop_up.classList.add('hidden');
         rating_box.classList.remove('hidden');
