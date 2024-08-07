@@ -19,16 +19,10 @@ rating_buttons.forEach(btn => {
 // Click on button 'Submit'
 submit_btn.addEventListener('click', function() {
 
-    console.log(num_star);
-
     if (isFinite(num_star))
     {
         pop_up.classList.remove('hidden');
         rating_box.classList.add('hidden');
-    }
-    else
-    {
-        alert('Please rate for us! Thank you!');
     }
 });
 
