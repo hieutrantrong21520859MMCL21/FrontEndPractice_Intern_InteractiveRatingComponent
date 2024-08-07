@@ -1,7 +1,7 @@
 const rating_box = document.querySelector('.rating-box');
 const pop_up = document.querySelector('.pop-up');
 const submit_btn = document.getElementById("submit");
-const rating_buttons = document.querySelectorAll('.rating-box ._button button');
+const rating_buttons = document.querySelectorAll(".rating-box form input[name='interactive-rating']");
 const result = document.getElementById('result');
 
 // Get number from the clicked button
@@ -11,8 +11,11 @@ rating_buttons.forEach(btn => {
     
     btn.addEventListener('click', function() {
 
-        result.innerHTML = btn.innerHTML;
-        num_star = btn.innerHTML;
+        if (btn.checked)
+        {
+            result.innerHTML = btn.value;
+            num_star = btn.value;
+        }
     })
 })
 
@@ -37,5 +40,8 @@ pop_up.addEventListener('click', function() {
         // Reset the rating
         result.innerHTML = "";
         num_star = undefined;
+
+        // Uncheck buttons
+        rating_buttons.forEach(btn => btn.checked = false);
     } 
 });

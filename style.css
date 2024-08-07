@@ -41,41 +41,52 @@ body {
     font-weight: 400;
 }
 
-.rating-box ._button {
+.rating-box form {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    row-gap: 20px;
 }
 
-.rating-box ._button button {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 15px;
+.rating-box form label {
     background-color: hsl(213, 20%, 22%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 15px;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+
+    
     cursor: pointer;
     transition: 0.3s;
 }
 
-.rating-box ._button button:hover {
-    background-color: hsl(25, 97%, 53%);
-}
-
-.rating-box ._button button:focus {
-    background-color: hsl(217, 12%, 63%);
-}
-
-.rating-box button {
+.rating-box form #submit {
     width: 100%;
     padding: 10px;
     border-radius: 20px;
     background-color: hsl(25, 97%, 53%);
+
+    font-size: 16px;
     font-weight: 700;
+
     transition: 0.4s;
     cursor: pointer;
 }
 
-.rating-box button:hover {
+.rating-box form label:hover {
+    background-color: hsl(25, 97%, 53%);
+}
+
+.rating-box form input[name='interactive-rating']:checked + label{
+    background-color: hsl(217, 12%, 63%);
+}
+
+.rating-box form #submit:hover {
     background-color: hsl(0, 0%, 100%);
 }
 
