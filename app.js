@@ -1,47 +1,38 @@
-const rating_box = document.querySelector('.rating-box');
-const pop_up = document.querySelector('.pop-up');
+const rating_box = document.querySelector(".rating-box");
+const pop_up = document.querySelector(".pop-up");
 const submit_btn = document.getElementById("submit");
-const rating_buttons = document.querySelectorAll(".rating-box form input[name='interactive-rating']");
-const result = document.getElementById('result');
+const rating_buttons = document.querySelectorAll(
+  ".rating-box form input[name='interactive-rating']"
+);
+const result = document.getElementById("result");
+const form = document.querySelector("form");
 
 // Get number from the clicked button
 let num_star;
 
-rating_buttons.forEach(btn => {
-    
-    btn.addEventListener('click', function() {
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-        if (btn.checked)
-        {
-            result.innerHTML = btn.value;
-            num_star = btn.value;
-        }
-    })
-})
+  const formData = new FormData(form);
+  const rating = formData.get("interactive-rating");
 
-// Click on button 'Submit'
-submit_btn.addEventListener('click', function() {
+  if (rating) {
+    pop_up.classList.remove("hidden");
+    rating_box.classList.add("hidden");
 
-    if (isFinite(num_star))
-    {
-        pop_up.classList.remove('hidden');
-        rating_box.classList.add('hidden');
-    }
+    result.innerHTML = rating;
+  }
 });
 
 // Click on pop - up to close it
-pop_up.addEventListener('click', function() {
+pop_up.addEventListener("click", function () {
+  if (!pop_up.classList.contains("hidden")) {
+    pop_up.classList.add("hidden");
+    rating_box.classList.remove("hidden");
 
-    if (!pop_up.classList.contains('hidden'))
-    {
-        pop_up.classList.add('hidden');
-        rating_box.classList.remove('hidden');
-
-        // Reset the rating
-        result.innerHTML = "";
-        num_star = undefined;
-
-        // Uncheck buttons
-        rating_buttons.forEach(btn => btn.checked = false);
-    } 
+    result.innerHTML = '';
+    
+    // Uncheck buttons
+    rating_buttons.forEach((btn) => (btn.checked = false));
+  }
 });
